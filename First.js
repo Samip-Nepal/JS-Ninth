@@ -20,7 +20,7 @@ function calculator(a,b,callback) {
 calculator(3,4,sum);*/
 
 //callback hell 
-function getdata (data,another_data){
+/*function getdata (data,another_data){
     setTimeout(()=>{
         console.log("data=",data);
         if (another_data){
@@ -39,4 +39,13 @@ getdata(1,()=>{
             
         });
     });
-});
+});*/
+
+//promise
+
+let promise=new Promise((resolve, reject) => {
+    console.log("This is promise");
+    resolve("Finally finished");
+    reject("try again");
+    
+})
