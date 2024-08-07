@@ -43,9 +43,23 @@ getdata(1,()=>{
 
 //promise
 
-let promise=new Promise((resolve, reject) => {
+/*let promise=new Promise((resolve, reject) => {
     console.log("This is promise");
     resolve("Finally finished");
     reject("try again");
     
-})
+})*/
+function getdata (data,another_data){
+    return new Promise((resolve, reject) => {
+        setTimeout(()=>{
+            console.log("data=",data);
+            resolve("sucess");
+            if (another_data){
+                another_data();
+            }
+        },2000);
+    })
+ 
+}
+let promise=getdata(234);
+console.log(promise);
