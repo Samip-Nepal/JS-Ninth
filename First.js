@@ -49,7 +49,7 @@ getdata(1,()=>{
     reject("try again");
     
 })*/
-function getdata (data,another_data){
+/*function getdata (data,another_data){
     return new Promise((resolve, reject) => {
         setTimeout(()=>{
             console.log("data=",data);
@@ -61,5 +61,22 @@ function getdata (data,another_data){
     })
  
 }
+    
 let promise=getdata(234);
 console.log(promise);
+*/
+
+const getdata=()=> {
+return new Promise((resolve, reject) => {
+    console.log("This is promise");
+  resolve("sucess");
+  //reject("sorry");
+});
+};
+let promise=getdata();
+promise.then(()=>{
+    console.log("Then print message or do somework after promise fulfilled"); 
+});
+/*promise.catch(()=>{
+    console.log("Then print message or do somework after promise fulfilled"); 
+});*/
