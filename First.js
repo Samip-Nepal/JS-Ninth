@@ -146,6 +146,20 @@ function getdata(data){
     });
  
 }
+
+(async function () {
+   
+    console.log("Getting data1....");
+    await getdata(1);
+    console.log("Getting data2....");
+    await getdata(2);
+    console.log("Getting data3....");
+    await getdata(3);
+    console.log("Getting data4....");
+    await getdata(4);
+   
+})();
+/*
 async function alldata() {
    
     console.log("Getting data1....");
@@ -158,6 +172,6 @@ async function alldata() {
     await getdata(4);
    
 }
-alldata();
+alldata();*/
 
 
