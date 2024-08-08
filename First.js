@@ -111,7 +111,8 @@ getdata().then(()=>{
     });
 });*/
 
-function getdata(data){
+//Example
+/*function getdata(data){
     return new Promise((resolve, reject) => {
         setTimeout(()=>{
             console.log("data",data);
@@ -132,5 +133,31 @@ getdata(1).then(()=>{
 }).then((res)=>{
     console.log(res);
     
-});
+});*/
+
+//Aync-await 
+function getdata(data){
+    return new Promise((resolve, reject) => {
+        setTimeout(()=>{
+            console.log("data",data);
+            resolve("sucess");
+            
+        },2000);
+    });
+ 
+}
+async function alldata() {
+   
+    console.log("Getting data1....");
+    await getdata(1);
+    console.log("Getting data2....");
+    await getdata(2);
+    console.log("Getting data3....");
+    await getdata(3);
+    console.log("Getting data4....");
+    await getdata(4);
+   
+}
+alldata();
+
 
