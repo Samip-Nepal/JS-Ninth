@@ -2,6 +2,7 @@
 console.log("One");
 console.log("two");
 console.log("three");
+
 //Asynchronous
 console.log("One");
 console.log("two");
@@ -10,6 +11,7 @@ setTimeout(()=>{
    hello= console.log("Hi");9000
 });
 console.log("Four");*/
+
 //call backs
 /*function sum (a,b){
     console.log(a+b);
@@ -66,12 +68,12 @@ let promise=getdata(234);
 console.log(promise);
 */
 
-const getdata=()=> {
+/*const getdata=()=> {
 return new Promise((resolve, reject) => {
     console.log("This is promise");
   resolve("sucess");
   //reject("sorry");
-});
+});   
 };
 let promise=getdata();
 promise.then(()=>{
@@ -80,3 +82,33 @@ promise.then(()=>{
 /*promise.catch(()=>{
     console.log("Then print message or do somework after promise fulfilled"); 
 });*/
+
+//Promise chain
+function getdata (){
+    return new Promise((resolve, reject) => {
+        setTimeout(()=>{
+            console.log("data1");
+            resolve("sucess");
+            
+        },2000);
+    });
+ 
+}
+function getdata2 (){
+    return new Promise((resolve, reject) => {
+        setTimeout(()=>{
+            console.log("data2");
+            resolve("sucess");
+            
+        },4000);
+    });
+ 
+}
+console.log("Data 1 loading");
+getdata().then(()=>{
+    console.log("Data 2 loading");
+    getdata2().then(()=>{
+    });
+});
+
+
