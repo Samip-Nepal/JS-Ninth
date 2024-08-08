@@ -84,7 +84,7 @@ promise.then(()=>{
 });*/
 
 //Promise chain
-function getdata (){
+/*function getdata (){
     return new Promise((resolve, reject) => {
         setTimeout(()=>{
             console.log("data1");
@@ -109,6 +109,28 @@ getdata().then(()=>{
     console.log("Data 2 loading");
     getdata2().then(()=>{
     });
-});
+});*/
 
+function getdata(data){
+    return new Promise((resolve, reject) => {
+        setTimeout(()=>{
+            console.log("data",data);
+            resolve("sucess");
+            
+        },2000);
+    });
+ 
+}
+console.log("Getting data1....");
+getdata(1).then(()=>{
+    console.log("Getting data2....");
+    return getdata(2);
+})
+.then((res)=>{
+    console.log("Getting data3....");
+    return getdata(3);
+}).then((res)=>{
+    console.log(res);
+    
+});
 
